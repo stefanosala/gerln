@@ -1,0 +1,9 @@
+{
+    "dependencies": {
+        "connect": "2.x",
+        "bower": "1.x"
+    },
+    "scripts": {
+        "postinstall": "node_modules/bower/bin/bower install"
+    }
+}

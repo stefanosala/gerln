@@ -1,0 +1,19 @@
+.result {
+    border: solid 1px;
+    display: none;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 4px 12px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.result-gut {
+    border-color: green;
+    color: green;
+    display: block;
+}
+.result-nein {
+    border-color: red;
+    color: red;
+    display: block;
+}

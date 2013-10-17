@@ -18,14 +18,14 @@ WordsRepository.factory('WordsRepository', ['$http', '$q',
                 var deferred = $q.defer();
 
                 request.success(function (words) {
+                    words = words.filter(function (word) {
+                        return word !== filterBy && word.category === filterBy.category;
+                    });
+
                     var _words = [];
 
                     while (_words.length < limit) {
-                        var newWord = words[Math.floor(Math.random() * words.length)];
-
-                        if (newWord !== filterBy && _words.indexOf(newWord) === -1) {
-                            _words.push(newWord);
-                        }
+                        _words.push(words[Math.floor(Math.random() * words.length)]);
                     }
 
                     deferred.resolve(_words);

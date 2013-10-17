@@ -2,6 +2,7 @@
 <html lang="en" ng-app="gerln">
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <title>Gerln</title>
 
@@ -13,9 +14,14 @@
         <script src="app/controller/score.js"></script>
         <script src="app/repository/words.js"></script>
         <script src="app/app.js"></script>
+
+        <link rel="stylesheet" href="app/components/bootstrap-sass/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/main.css" />
     </head>
 
     <body>
-        <div ng-view></div>
+        <div class="container">
+            <div ng-view></div>
+        </div>
     </body>
 </html>

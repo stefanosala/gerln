@@ -25,6 +25,10 @@ MainController.controller('MainController', ['$scope', 'WordsRepository', '$loca
         $scope.submit = function (index) {
             if ($scope.otherWords[index] === $scope.word) {
                 $scope.score += 1;
+                $scope.result = 'gut';
+            } else {
+                $scope.score = $scope.score > 0 ? $scope.score - 1 : 0;
+                $scope.result = 'nein';
             }
 
             if ($scope.score < 10) {
