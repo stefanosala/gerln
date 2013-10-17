@@ -1,0 +1,5 @@
+<p>Score: {{ score }}</p>
+
+<p>{{ word.german }}</p>
+
+<button class="btn btn-primary" ng-repeat="w in otherWords" data-index="{{ $index }}" ng-click="submit($index)">{{ w.english }}</button>

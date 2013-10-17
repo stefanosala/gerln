@@ -1,0 +1,25 @@
+{
+  "name": "Gerln",
+  "version": "0.0.1",
+  "authors": [
+    "Stefano Sala <stefano.sala@spa.it>"
+  ],
+  "description": "German learning application",
+  "main": "app.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2",
+    "angular-resource": "~1.2",
+    "angular-route": "~1.2",
+    "jquery": "~1.9.1",
+    "bootstrap-sass": "~2.3.1"
+  }
+}
