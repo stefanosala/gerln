@@ -25,7 +25,11 @@ WordsRepository.factory('WordsRepository', ['$http', '$q',
                     var _words = [];
 
                     while (_words.length < limit) {
-                        _words.push(words[Math.floor(Math.random() * words.length)]);
+                        var word = words[Math.floor(Math.random() * words.length)];
+
+                        if (_words.indexOf(word) === -1) {
+                            _words.push(word);
+                        }
                     }
 
                     deferred.resolve(_words);
