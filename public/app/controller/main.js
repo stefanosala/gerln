@@ -1,10 +1,19 @@
 var MainController = angular.module('MainController', []);
 
-MainController.controller('MainController', ['$scope', 'WordsRepository', '$location',
-    function MainController($scope, WordsRepository, $location) {
+MainController.controller('MainController', ['$scope', 'WordsRepository', '$location', '$timeout',
+    function MainController($scope, WordsRepository, $location, $timeout) {
         if ($scope.score === undefined) {
             $scope.score = 0;
             $scope.startedAt = new Date();
+            $scope.seconds = 0;
+
+            $scope.secondsUpdate = function() {
+                $scope.seconds = Math.floor((new Date() - $scope.startedAt) / 1000);
+
+                $timeout($scope.secondsUpdate, 500);
+            };
+
+            $scope.secondsUpdate();
         }
 
         WordsRepository.fetchOne()

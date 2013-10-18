@@ -1,4 +1,12 @@
-<h2>Current score: {{ score }} / 10</h2>
+<h2>
+    <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ score * 10 }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ score * 10 }}%">
+            <span class="sr-only">{{ score * 10 }} / 10</span>
+        </div>
+    </div>
+</h2>
+
+<h2>{{ seconds }} seconds.</h2>
 
 <div class="result result-{{ result }}">
     {{ result }}!
