@@ -1,3 +1,13 @@
 <h1 style="padding-bottom: 16px;">{{ seconds }} seconds!</h1>
 
+<h2>Most guessed words</h2>
+
+<ul>
+    <li ng-repeat="word in highscores">{{ word.word }} - {{ word.value }} / 5</li>
+</ul>
+
 <button class="btn btn-primary btn-lg btn-block" ng-click="restart()">Restart</button>
+
+<br />
+
+<button class="btn btn-block" ng-click="clear()">Clear ranking &amp; restart</button>
