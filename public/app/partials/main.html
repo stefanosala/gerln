@@ -6,13 +6,15 @@
     </div>
 </h2>
 
-<h2>{{ seconds }} seconds.</h2>
+<h3>{{ seconds }} seconds.</h3>
 
 <div class="result result-{{ result }}">
     {{ result }}!
 </div>
 
-<h1 style="text-align: center; padding-bottom: 16px;">{{ word.german }}</h1>
+<h2 style="text-align: center; padding-bottom: 8px;">{{ word.german }}</h2>
+
+<h4 style="text-align: center; padding-bottom: 16px;">{{ highscore }} / 5</h4>
 
 <div class="row">
     <div class="col-md-4" ng-repeat="w in otherWords" style="text-align: center; padding-bottom: 6px;">

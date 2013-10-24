@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# manifest version 1.0
+# manifest version 1.1
 
 CACHE:
 
@@ -21,6 +21,7 @@ CACHE:
 /app/partials/main.html
 /app/partials/score.html
 /app/repository/words.js
+/app/repository/highscores.js
 /cache.manifest
 /css/main.css
 /index.html

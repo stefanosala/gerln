@@ -2,7 +2,8 @@ var gerln = angular.module('gerln', [
     'ngRoute',
     'MainController',
     'ScoreController',
-    'WordsRepository'
+    'WordsRepository',
+    'HighscoresRepository'
 ]);
 
 gerln.config(['$routeProvider',

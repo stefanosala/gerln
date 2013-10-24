@@ -1,7 +1,7 @@
 var MainController = angular.module('MainController', []);
 
-MainController.controller('MainController', ['$scope', 'WordsRepository', '$location', '$timeout',
-    function MainController($scope, WordsRepository, $location, $timeout) {
+MainController.controller('MainController', ['$scope', 'WordsRepository', 'HighscoresRepository', '$location', '$timeout',
+    function MainController($scope, WordsRepository, HighscoresRepository, $location, $timeout) {
         if ($scope.score === undefined) {
             $scope.score = 0;
             $scope.startedAt = new Date();
@@ -19,6 +19,7 @@ MainController.controller('MainController', ['$scope', 'WordsRepository', '$loca
         WordsRepository.fetchOne()
             .then(function (word) {
                 $scope.word = word;
+                $scope.highscore = HighscoresRepository.fetch(word);
 
                 return word;
             }).then(function (word) {
@@ -35,13 +36,17 @@ MainController.controller('MainController', ['$scope', 'WordsRepository', '$loca
             if ($scope.otherWords[index] === $scope.word) {
                 $scope.score += 1;
                 $scope.result = 'gut';
+
+                HighscoresRepository.up($scope.word);
             } else {
                 $scope.score = $scope.score > 0 ? $scope.score - 1 : 0;
                 $scope.result = 'nein';
+
+                HighscoresRepository.down($scope.word);
             }
 
             if ($scope.score < 10) {
-                MainController($scope, WordsRepository, $location);
+                MainController($scope, WordsRepository, HighscoresRepository, $location, $timeout);
             } else {
                 $location.path('/score/' + $scope.startedAt.getTime());
             }
