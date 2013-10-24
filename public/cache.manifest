@@ -1,4 +1,7 @@
 CACHE MANIFEST
+
+CACHE:
+
 /app/app.js
 /app/array/shuffle.js
 /app/components/angular/angular.min.js
@@ -20,3 +23,7 @@ CACHE MANIFEST
 /cache.manifest
 /css/main.css
 /index.html
+
+NETWORK:
+
+http://www.google-analytics.com/analytics.js
